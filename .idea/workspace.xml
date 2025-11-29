@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Added between method for all future parsers">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Source.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" afterDir="false" />
+    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Added from parser">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
     </list>
@@ -98,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764328282874</updated>
-      <workItem from="1764328283893" duration="7195000" />
+      <workItem from="1764328283893" duration="7540000" />
     </task>
     <task id="LOCAL-00001" summary="Added QueryParser that parses selects into a Query">
       <option name="closed" value="true" />
@@ -116,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764421489884</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added from parser">
+      <option name="closed" value="true" />
+      <created>1764425165546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764425165546</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,14 +130,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added QueryParser that parses selects into a Query" />
     <MESSAGE value="Added between method for all future parsers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added between method for all future parsers" />
+    <MESSAGE value="Added from parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added from parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>36</line>
+          <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

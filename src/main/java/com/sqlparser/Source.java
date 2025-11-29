@@ -8,4 +8,9 @@ public class Source {
         this.table = table;
         this.alias = alias;
     }
+
+    @Override
+    public String toString() {
+        return table + (alias != null ? " AS " + alias : "");
+    }
 }
