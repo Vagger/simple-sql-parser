@@ -15,14 +15,19 @@ public class QueryParser {
     }
 
     public List<String> parseSelects(String sql) {
-        int startIndex = sql.toLowerCase().indexOf("select");
-        if (startIndex == -1) return null;
-
-        startIndex += "select".length();
-        int endIndex = sql.toLowerCase().indexOf("from", startIndex);
-        if (endIndex == -1) return null;
-
-        return Arrays.stream(sql.substring(startIndex, endIndex).split(",")).toList();
+        String selectPart = between(sql, "select", "from");
+        assert selectPart != null;
+        return Arrays.stream(selectPart.split(",")).toList();
     }
 
+    private String between(String sql, String left, String right) {
+        int startIndex = sql.toLowerCase().indexOf(left);
+        if (startIndex == -1) return null;
+
+        startIndex += left.length();
+        int endIndex = sql.toLowerCase().indexOf(right, startIndex);
+        if (endIndex == -1) return null;
+
+        return sql.substring(startIndex, endIndex);
+    }
 }

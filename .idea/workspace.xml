@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" afterDir="false" />
+    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Added QueryParser that parses selects into a Query">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Vagger"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Vagger/simple-sql-parser.git",
@@ -90,11 +95,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764328282874</updated>
-      <workItem from="1764328283893" duration="704000" />
+      <workItem from="1764328283893" duration="3316000" />
     </task>
+    <task id="LOCAL-00001" summary="Added QueryParser that parses selects into a Query">
+      <option name="closed" value="true" />
+      <created>1764329209332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764329209332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added QueryParser that parses selects into a Query" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added QueryParser that parses selects into a Query" />
   </component>
 </project>
