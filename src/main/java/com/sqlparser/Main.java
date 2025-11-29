@@ -8,5 +8,6 @@ public class Main {
 
         QueryParser parser = new QueryParser();
         Query query = parser.parse(sql);
+        System.out.println(query);
     }
 }
