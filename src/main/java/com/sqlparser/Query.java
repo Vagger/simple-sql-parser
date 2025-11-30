@@ -6,14 +6,15 @@ public class Query {
 
     private List<String> selects;
     private List<Source> froms;
+    private Integer limit;
+    private Integer offset;
 
     // TODO
-//    public List<String> joins;
-//    public List<String> wheres;
-//    public List<String> groupBy;
-//    public List<String> sorts;
-//    public int limit;
-//    public int offset;
+//    private List<String> joins;
+//    private List<String> wheres;
+//    private List<String> groupBy;
+//    private List<String> sorts;
+
 
 
     public void setSelects(List<String> selects) {
@@ -24,11 +25,21 @@ public class Query {
         this.froms = froms;
     }
 
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+
     @Override
     public String toString() {
         return "Query: " +
                 "\nSELECTS=" + selects + ", " +
-                "\nFROMS=" + froms +
+                "\nFROMS=" + froms + ", " +
+                "\nLIMIT=" + limit + ", " +
+                "\nOFFSET=" + offset + ", " +
                 "\n]";
     }
 }

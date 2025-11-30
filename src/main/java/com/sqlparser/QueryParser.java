@@ -1,9 +1,6 @@
 package com.sqlparser;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class QueryParser {
 
@@ -13,6 +10,8 @@ public class QueryParser {
         Query query = new Query();
         query.setSelects(parseSelects(sql));
         query.setFroms(parseFroms(sql));
+        query.setLimit(parseLimit(sql));
+        query.setOffset(parseOffset(sql));
         return query;
     }
 
@@ -33,6 +32,22 @@ public class QueryParser {
         }
 
         return sources;
+    }
+
+    public Integer parseLimit(String sql) {
+        String limitPart = between(sql, "limit", Set.of("offset"));
+        if (limitPart == null) {
+            return null;
+        }
+        return Integer.parseInt(limitPart.trim());
+    }
+
+    public Integer parseOffset(String sql) {
+        String offsetPart = between(sql, "offset", Set.of());
+        if (offsetPart == null) {
+            return null;
+        }
+        return Integer.parseInt(offsetPart.trim());
     }
 
     private String between(String sql, String left, Set<String> right) {
