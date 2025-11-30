@@ -29,7 +29,7 @@ public class Query {
         this.limit = limit;
     }
 
-    public void setOffset(int offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

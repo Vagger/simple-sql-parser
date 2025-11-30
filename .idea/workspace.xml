@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Source type for froms and setters for query">
+    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Added limit and offset">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764328282874</updated>
-      <workItem from="1764328283893" duration="9385000" />
+      <workItem from="1764328283893" duration="10404000" />
     </task>
     <task id="LOCAL-00001" summary="Added QueryParser that parses selects into a Query">
       <option name="closed" value="true" />
@@ -130,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764425595328</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added limit and offset">
+      <option name="closed" value="true" />
+      <created>1764506484436</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764506484436</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,15 +149,31 @@
     <MESSAGE value="Added between method for all future parsers" />
     <MESSAGE value="Added from parser" />
     <MESSAGE value="Source type for froms and setters for query" />
-    <option name="LAST_COMMIT_MESSAGE" value="Source type for froms and setters for query" />
+    <MESSAGE value="Added limit and offset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added limit and offset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="1" />
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

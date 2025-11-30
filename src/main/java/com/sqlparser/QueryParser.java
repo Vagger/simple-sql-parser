@@ -7,6 +7,11 @@ public class QueryParser {
     public QueryParser() {}
 
     public Query parse(String sql) {
+
+        sql = sql.replaceAll("\\s+", " ")
+                .trim()
+                .replaceAll(";$", "");
+
         Query query = new Query();
         query.setSelects(parseSelects(sql));
         query.setFroms(parseFroms(sql));
@@ -36,18 +41,18 @@ public class QueryParser {
 
     public Integer parseLimit(String sql) {
         String limitPart = between(sql, "limit", Set.of("offset"));
-        if (limitPart == null) {
+        if (limitPart == null || limitPart.trim().isEmpty()) {
             return null;
         }
-        return Integer.parseInt(limitPart.trim());
+        return Integer.valueOf(limitPart.trim());
     }
 
     public Integer parseOffset(String sql) {
         String offsetPart = between(sql, "offset", Set.of());
-        if (offsetPart == null) {
+        if (offsetPart == null || offsetPart.trim().isEmpty()) {
             return null;
         }
-        return Integer.parseInt(offsetPart.trim());
+        return Integer.valueOf(offsetPart.trim());
     }
 
     private String between(String sql, String left, Set<String> right) {
@@ -55,7 +60,7 @@ public class QueryParser {
         if (startIndex == -1) return null;
         startIndex += left.length();
 
-        int endIndex = sql.length() - 1;
+        int endIndex = sql.length();
         for (String keyword : right) {
             int currentIndex = sql.toLowerCase().indexOf(keyword, startIndex);
             if (currentIndex != -1) {
