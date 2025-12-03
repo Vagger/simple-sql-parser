@@ -8,9 +8,10 @@ public class Query {
     private List<Source> froms;
     private Integer limit;
     private Integer offset;
+    private List<Join> joins;
+
 
     // TODO
-//    private List<String> joins;
 //    private List<String> wheres;
 //    private List<String> groupBy;
 //    private List<String> sorts;
@@ -33,11 +34,16 @@ public class Query {
         this.offset = offset;
     }
 
+    public void setJoins(List<Join> joins) {
+        this.joins = joins;
+    }
+
     @Override
     public String toString() {
         return "Query: " +
                 "\nSELECTS=" + selects + ", " +
                 "\nFROMS=" + froms + ", " +
+                "\nJOINS=" + joins + ", " +
                 "\nLIMIT=" + limit + ", " +
                 "\nOFFSET=" + offset + ", " +
                 "\n]";
