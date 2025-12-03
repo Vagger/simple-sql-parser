@@ -10,11 +10,9 @@ public class Query {
     private Integer offset;
     private List<Join> joins;
     private List<WhereClause> whereClauses;
-
-    // TODO
-//
-//    private List<String> groupByColumns;
-//    private List<Sort> sortColumns;
+    private List<String> groupByColumns;
+    private List<String> havingColumns;
+    private List<Sort> orderByColumns;
 
 
 
@@ -34,6 +32,18 @@ public class Query {
         this.whereClauses = whereClauses;
     }
 
+    public void setGroupByColumns(List<String> groupByColumns) {
+        this.groupByColumns = groupByColumns;
+    }
+
+    public void setHavingColumns(List<String> havingColumns) {
+        this.havingColumns = havingColumns;
+    }
+
+    public void setOrderByColumns(List<Sort> orderByColumns) {
+        this.orderByColumns = orderByColumns;
+    }
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -49,6 +59,8 @@ public class Query {
                 "\nFROMS=" + froms + ", " +
                 "\nJOINS=" + joins + ", " +
                 "\nWHERES=" + whereClauses + ", " +
+                "\nGROUP BY=" + groupByColumns + ", " +
+                "\nORDER BY=" + orderByColumns + ", " +
                 "\nLIMIT=" + limit + ", " +
                 "\nOFFSET=" + offset + ", " +
                 "\n]";

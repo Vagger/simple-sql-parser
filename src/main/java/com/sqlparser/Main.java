@@ -18,7 +18,8 @@ public class Main {
                     WHERE book.author_id IS NOT NULL
                     AND reader.author_id IS NOT NULL
                     OR reviews.rating > 4
-                    GROUP BY author.name
+                    GROUP BY author.name, reviews.rating
+                    ORDER BY reviews.rating desc
                     HAVING COUNT(*) > 1 AND SUM(book.cost) > 500
                     LIMIT 10
                     OFFSET 5;

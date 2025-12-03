@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Trim selects">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/WhereClause.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Join.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" afterDir="false" />
+    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Removed unnecessary currentIndex">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Sort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
     </list>
@@ -50,7 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -99,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764328282874</updated>
-      <workItem from="1764328283893" duration="28211000" />
+      <workItem from="1764328283893" duration="29276000" />
     </task>
     <task id="LOCAL-00001" summary="Added QueryParser that parses selects into a Query">
       <option name="closed" value="true" />
@@ -165,7 +162,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764764519329</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added wheres and added whitespaces for all commands">
+      <option name="closed" value="true" />
+      <created>1764766319921</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764766319921</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Removed unnecessary currentIndex">
+      <option name="closed" value="true" />
+      <created>1764766777047</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764766777047</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,16 +193,13 @@
     <MESSAGE value="Tidying up, + added whitespace trimming" />
     <MESSAGE value="Added join parser, and lots of background changes to accommodate it" />
     <MESSAGE value="Trim selects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trim selects" />
+    <MESSAGE value="Added wheres and added whitespaces for all commands" />
+    <MESSAGE value="Removed unnecessary currentIndex" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary currentIndex" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java</url>
           <line>28</line>
@@ -197,12 +207,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>104</line>
+          <line>105</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
