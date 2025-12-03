@@ -20,8 +20,8 @@ public class QueryParser {
         query.setJoins(parseJoins());
         query.setWheres(parseWheres());
         query.setGroupByColumns(parseGroupBy());
+        query.setHavingColumns(parseHaving());
 //        query.setOrderByColumns(parseOrderBy());
-//        query.setHavingColumns(parseHaving());
         query.setLimit(parseLimit());
         query.setOffset(parseOffset());
         return query;
@@ -120,6 +120,18 @@ public class QueryParser {
             groupByParts.add(part.trim());
         }
         return groupByParts;
+    }
+
+    public List<String> parseHaving() {
+        List<String> havingParts = new ArrayList<>();
+        String havingPart = between(currentSql, " having ", Set.of(" order by ", " limit ", " offset "));
+        if (havingPart == null) {
+            return havingParts;
+        }
+        for (String part : havingPart.split(",")) {
+            havingParts.add(part.trim());
+        }
+        return havingParts;
     }
 
     public Integer parseLimit() {

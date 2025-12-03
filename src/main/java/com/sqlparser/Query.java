@@ -60,6 +60,7 @@ public class Query {
                 "\nJOINS=" + joins + ", " +
                 "\nWHERES=" + whereClauses + ", " +
                 "\nGROUP BY=" + groupByColumns + ", " +
+                "\nHAVING=" + havingColumns + ", " +
                 "\nORDER BY=" + orderByColumns + ", " +
                 "\nLIMIT=" + limit + ", " +
                 "\nOFFSET=" + offset + ", " +
