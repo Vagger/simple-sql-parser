@@ -21,7 +21,7 @@ public class QueryParser {
         query.setWheres(parseWheres());
         query.setGroupByColumns(parseGroupBy());
         query.setHavingColumns(parseHaving());
-//        query.setOrderByColumns(parseOrderBy());
+        query.setOrderByColumns(parseOrderBy());
         query.setLimit(parseLimit());
         query.setOffset(parseOffset());
         return query;
@@ -132,6 +132,19 @@ public class QueryParser {
             havingParts.add(part.trim());
         }
         return havingParts;
+    }
+
+    public List<Sort> parseOrderBy() {
+        List<Sort> sorts = new ArrayList<>();
+        String orderByPart = between(currentSql, " order by ", Set.of(" limit ", "offset "));
+        if (orderByPart == null) {
+            return sorts;
+        }
+        for (String part : orderByPart.split(",")) {
+            String[] tokens = part.trim().split("\\s+");
+            sorts.add(new Sort(tokens[0], tokens.length > 1 && tokens[1].equalsIgnoreCase("desc")));
+        }
+        return sorts;
     }
 
     public Integer parseLimit() {

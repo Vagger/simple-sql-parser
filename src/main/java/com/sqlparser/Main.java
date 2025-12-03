@@ -19,8 +19,8 @@ public class Main {
                     AND reader.author_id IS NOT NULL
                     OR reviews.rating > 4
                     GROUP BY author.name, reviews.rating
-                    ORDER BY reviews.rating desc
                     HAVING COUNT(*) > 1 AND SUM(book.cost) > 500
+                    ORDER BY reviews.rating desc
                     LIMIT 10
                     OFFSET 5;
                 """;
