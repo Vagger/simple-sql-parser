@@ -1,24 +1,17 @@
 package com.sqlparser;
 
-public class Join {
+public class WhereClause {
     private final String type;
-    private final Source source;
     private final String condition;
 
-    public Join(String type, Source source, String condition) {
+    public WhereClause(String type, String condition) {
         this.type = type;
-        this.source = source;
         this.condition = condition;
-    }
-
-    public Join(String type, Source source) { // when no ON condition yet
-        this(type, source, null);
     }
 
     @Override
     public String toString() {
         return "{type='" + type + '\'' +
-                ", source=" + source +
                 ", condition='" + condition + '\'' +
                 '}';
     }

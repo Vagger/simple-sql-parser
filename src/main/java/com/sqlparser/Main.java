@@ -15,6 +15,9 @@ public class Main {
                     LEFT JOIN book b ON (author.id = book.author_id)
                     JOIN reader ON (author.id = reader.author_id)
                     INNER JOIN reviews r ON (reader.id = reviews.reader_id)
+                    WHERE book.author_id IS NOT NULL
+                    AND reader.author_id IS NOT NULL
+                    OR reviews.rating > 4
                     GROUP BY author.name
                     HAVING COUNT(*) > 1 AND SUM(book.cost) > 500
                     LIMIT 10

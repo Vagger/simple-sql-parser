@@ -19,6 +19,7 @@ public class QueryParser {
         query.setSelects(parseSelects());
         query.setFroms(parseFroms());
         query.setJoins(parseJoins());
+        query.setWheres(parseWheres());
         query.setLimit(parseLimit());
         query.setOffset(parseOffset());
         return query;
@@ -26,7 +27,7 @@ public class QueryParser {
 
     public List<String> parseSelects() {
         List<String> selects = new ArrayList<>();
-        String selectPart = between(currentSql, "select", Set.of("from"));
+        String selectPart = between(currentSql, "select ", Set.of(" from "));
         assert selectPart != null;
         for (String part : selectPart.split(",")) {
             selects.add(part.trim());
@@ -35,7 +36,7 @@ public class QueryParser {
     }
 
     public List<Source> parseFroms() {
-        String fromPart = between(currentSql, "from", Set.of("where", "join", "left join", "right join", "inner join", "full join", "limit", "offset"));
+        String fromPart = between(currentSql, " from ", Set.of(" where ", " join ", " left join ", " right join ", " inner join ", " full join ", " limit ", " offset "));
 
         List<Source> sources = new ArrayList<>();
         assert fromPart != null;
@@ -50,7 +51,7 @@ public class QueryParser {
     public List<Join> parseJoins() {
         List<Join> joins = new ArrayList<>();
 
-        Set<String> joinKeywords = Set.of("left join", "right join", "inner join", "full join", "join");
+        Set<String> joinKeywords = Set.of(" left join ", " right join ", " inner join ", " full join ", " join ");
 
         int idx = -1;
         for (String type : joinKeywords) {
@@ -59,17 +60,17 @@ public class QueryParser {
         }
 
         while (true) {
-            String joinType = "join";
+            String joinType = " join ";
             for (String type : joinKeywords) {
                 if (currentSql.startsWith(type, idx)) {
                     joinType = type.trim();
                 }
             }
-            String tableAndAlias = between(currentSql, joinType, Set.of("on"));
+            String tableAndAlias = between(currentSql, joinType, Set.of(" on "));
             if (tableAndAlias == null) {
                 break;
             }
-            String condition = between(currentSql, "on", Set.of("left join", "right join", "inner join", "full join", "join", "where", "group by", "order by", "limit", "offset"));
+            String condition = between(currentSql, " on ", Set.of(" left join ", " right join ", " inner join ", " full join ", " join ", " where ", " group by ", " order by ", " limit ", " offset "));
 
             String[] parts = tableAndAlias.trim().split("\\s+");
             Source source = new Source(parts[0].trim(), parts.length > 1 ? parts[1].trim() : null);
@@ -78,8 +79,37 @@ public class QueryParser {
         return joins;
     }
 
+    public List<WhereClause> parseWheres() {
+        List<WhereClause> whereClauses = new ArrayList<>();
+
+        Set<String> whereKeywords = Set.of(" and ", " or ");
+
+        String whereType = " where ";
+
+        String condition = between(currentSql, whereType, Set.of(" and ", " or ", " group by ", " order by ", " limit ", " offset "));
+        if (condition == null) {
+            return whereClauses;
+        }
+        whereClauses.add(new WhereClause(whereType.trim(), condition.trim()));
+        while (true) {
+            for (String type : whereKeywords) {
+                if (currentSql.startsWith(type)) {
+                    whereType = type;
+                }
+            }
+
+            condition = between(currentSql, whereType, Set.of(" and ", " or ", " group by ", " order by ", " limit ", " offset "));
+            if (condition == null) {
+                break;
+            }
+            WhereClause whereClause = new WhereClause(whereType.trim(), condition.trim());
+            whereClauses.add(whereClause);
+        }
+        return whereClauses;
+    }
+
     public Integer parseLimit() {
-        String limitPart = between(currentSql, "limit", Set.of("offset"));
+        String limitPart = between(currentSql, " limit ", Set.of(" offset "));
         if (limitPart == null || limitPart.trim().isEmpty()) {
             return null;
         }
@@ -87,7 +117,7 @@ public class QueryParser {
     }
 
     public Integer parseOffset() {
-        String offsetPart = between(currentSql, "offset", Set.of());
+        String offsetPart = between(currentSql, " offset ", Set.of());
         if (offsetPart == null || offsetPart.trim().isEmpty()) {
             return null;
         }

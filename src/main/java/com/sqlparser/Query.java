@@ -9,12 +9,12 @@ public class Query {
     private Integer limit;
     private Integer offset;
     private List<Join> joins;
-
+    private List<WhereClause> whereClauses;
 
     // TODO
-//    private List<String> wheres;
-//    private List<String> groupBy;
-//    private List<String> sorts;
+//
+//    private List<String> groupByColumns;
+//    private List<Sort> sortColumns;
 
 
 
@@ -26,6 +26,14 @@ public class Query {
         this.froms = froms;
     }
 
+    public void setJoins(List<Join> joins) {
+        this.joins = joins;
+    }
+
+    public void setWheres(List<WhereClause> whereClauses) {
+        this.whereClauses = whereClauses;
+    }
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -34,16 +42,13 @@ public class Query {
         this.offset = offset;
     }
 
-    public void setJoins(List<Join> joins) {
-        this.joins = joins;
-    }
-
     @Override
     public String toString() {
         return "Query: " +
                 "\nSELECTS=" + selects + ", " +
                 "\nFROMS=" + froms + ", " +
                 "\nJOINS=" + joins + ", " +
+                "\nWHERES=" + whereClauses + ", " +
                 "\nLIMIT=" + limit + ", " +
                 "\nOFFSET=" + offset + ", " +
                 "\n]";
