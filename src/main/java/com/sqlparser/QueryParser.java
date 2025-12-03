@@ -25,9 +25,13 @@ public class QueryParser {
     }
 
     public List<String> parseSelects() {
+        List<String> selects = new ArrayList<>();
         String selectPart = between(currentSql, "select", Set.of("from"));
         assert selectPart != null;
-        return Arrays.stream(selectPart.split(",")).toList();
+        for (String part : selectPart.split(",")) {
+            selects.add(part.trim());
+        }
+        return selects;
     }
 
     public List<Source> parseFroms() {

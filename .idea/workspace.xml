@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Tidying up, + added whitespace trimming">
-      <change afterPath="$PROJECT_DIR$/src/SQL-Parser.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Join.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a1a1f27-8a91-4be3-addb-9afe75a16c21" name="Changes" comment="Added join parser, and lots of background changes to accommodate it">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764328282874</updated>
-      <workItem from="1764328283893" duration="26257000" />
+      <workItem from="1764328283893" duration="26560000" />
     </task>
     <task id="LOCAL-00001" summary="Added QueryParser that parses selects into a Query">
       <option name="closed" value="true" />
@@ -149,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764507369085</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added join parser, and lots of background changes to accommodate it">
+      <option name="closed" value="true" />
+      <created>1764764341516</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764764341516</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,29 +166,15 @@
     <MESSAGE value="Source type for froms and setters for query" />
     <MESSAGE value="Added limit and offset" />
     <MESSAGE value="Tidying up, + added whitespace trimming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidying up, + added whitespace trimming" />
+    <MESSAGE value="Added join parser, and lots of background changes to accommodate it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added join parser, and lots of background changes to accommodate it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>46</line>
+          <line>50</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -194,7 +184,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sqlparser/QueryParser.java</url>
-          <line>64</line>
+          <line>67</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
