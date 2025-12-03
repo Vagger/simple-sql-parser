@@ -4,7 +4,6 @@ import java.util.*;
 
 public class QueryParser {
 
-    int currentIndex = 0;
     String currentSql = "";
 
     public QueryParser() {
